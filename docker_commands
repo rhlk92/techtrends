@@ -1,0 +1,30 @@
+## Docker commands used to build the application 
+docker build -t techtrends .
+
+## Docker commands used to run the application
+docker run --name techtrends -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs -f techtrends
+
+## Logs from the container running the TechTrends application
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:_internal:01-Jul-21 18:11:14 -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:01-Jul-21 18:12:19 - The "About Us" page is retrieved
+INFO:_internal:01-Jul-21 18:12:19 - 172.17.0.1 - - [01/Jul/2021 18:12:19] "GET /about HTTP/1.1" 200 -
+INFO:_internal:01-Jul-21 18:12:19 - 172.17.0.1 - - [01/Jul/2021 18:12:19] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:_internal:01-Jul-21 18:12:19 - 172.17.0.1 - - [01/Jul/2021 18:12:19] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:01-Jul-21 18:12:25 - Article "2020 CNCF Annual Report" retrieved!
+INFO:_internal:01-Jul-21 18:12:25 - 172.17.0.1 - - [01/Jul/2021 18:12:25] "GET /1 HTTP/1.1" 200 -
+INFO:app:01-Jul-21 18:12:28 - Article "KubeCon + CloudNativeCon 2021" retrieved!
+INFO:_internal:01-Jul-21 18:12:28 - 172.17.0.1 - - [01/Jul/2021 18:12:28] "GET /2 HTTP/1.1" 200 -
+INFO:_internal:01-Jul-21 18:12:34 - 172.17.0.1 - - [01/Jul/2021 18:12:34] "GET /metrics HTTP/1.1" 200 -
+INFO:_internal:01-Jul-21 18:12:41 - 172.17.0.1 - - [01/Jul/2021 18:12:41] "GET /healthz HTTP/1.1" 200 -
+INFO:_internal:01-Jul-21 18:16:32 - 172.17.0.1 - - [01/Jul/2021 18:16:32] "GET /create HTTP/1.1" 200 -
+INFO:app:01-Jul-21 18:16:41 - Article "New Post" created
+INFO:_internal:01-Jul-21 18:16:41 - 172.17.0.1 - - [01/Jul/2021 18:16:41] "POST /create HTTP/1.1" 302 -
+INFO:_internal:01-Jul-21 18:16:41 - 172.17.0.1 - - [01/Jul/2021 18:16:41] "GET / HTTP/1.1" 200 -
