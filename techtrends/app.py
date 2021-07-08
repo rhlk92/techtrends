@@ -24,11 +24,18 @@ def get_post(post_id):
     return post
 
 
-# Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
+
+# set logger to handle STDOUT and STDERR
+stdout_handler = logging.StreamHandler(sys.stdout)
+stderr_handler = logging.StreamHandler(sys.stderr)
+handlers = [stderr_handler, stdout_handler]
+
 logging.basicConfig(level=logging.DEBUG,
-                    format='%(levelname)s:%(module)s:%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+                    format='%(levelname)s:%(module)s:%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    handlers=handlers)
 
 # Define the main route of the web application
 
